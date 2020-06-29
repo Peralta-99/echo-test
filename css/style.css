@@ -1,0 +1,258 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*Page ============
+/============ */
+.page {
+    position: absolute;
+    width: 1024px;
+    height: 100vh;
+    /*background-color: rebeccapurple;*/
+    left: 50%;
+    margin-left: -512px;
+}
+/*Header-logo ============
+/============ */
+.header-logo {
+    margin: 12px 0 20px 0;
+    width: 100%;
+    height: 86px;
+    background-image: url("../assets/header/шапка@2x.jpg");
+}
+
+.logo {
+    display: inline-block;
+    width: 230px;
+    height: 86px;
+}
+/*Navigation ============
+/============ */
+.navigation {
+    font-size: 0.875rem;
+    height: 43px;
+    margin: 0 11px;
+    display: flex;
+    background-color: #231F20;
+    text-align: center;
+    outline: 1px solid #E0E0E0;
+}
+
+.navigation-item {
+    height: 100%;
+    padding: 13px 0;
+    border-right: 1px solid #EB5017;
+    background-color: #231F20;
+    flex-grow: 1;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: auto;
+}
+
+.navigation-item.active {
+    background-color: #EB5017;
+}
+
+nav a:last-child   {
+    border-right: none;
+}
+/*Breadcrumbs ============
+/============ */
+.breadcrumbs {
+    width: 387px;
+    height: 36px;
+    padding: 0 0 0 0;
+    margin: 13.6px 607px 3px 30px;
+    font-size: 0.75rem;
+    cursor: default;
+}
+
+.breadcrumbs-item {
+    display: inline;
+}
+
+.breadcrumbs li {
+    color: #231F20;
+}
+
+.breadcrumbs li, a {
+    color: #231F20;
+}
+/*Calculator ============
+/============ */
+.range-slider {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 1rem;
+    height: 0.35rem;
+    background-color: #231F20;
+}
+
+.range-slider::-webkit-slider-thumb {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    width: 0.75rem;
+    height: 1rem;
+    z-index: 3;
+    position: relative;
+}
+
+input[type=range]::-moz-range-thumb {
+    opacity: 0;
+}
+
+#selector, #selector1 {
+    width: 0.75rem;
+    position: absolute;
+    height: 15px;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+
+#progressBar {
+    background: #84AA31;
+    position: absolute;
+    border-radius: 1rem;
+    /*top: 0;*/
+    left: -1px;
+    bottom: 3px;
+    width: 1.5%;
+    height: 37%;
+
+}
+
+#progressBar1 {
+    background: #84AA31;
+    position: absolute;
+    border-radius: 1rem;
+    /*top: 0;*/
+    left: -1px;
+    bottom: 17px;
+    width: 1.5%;
+    height: 22%;
+}
+
+#selector1 {
+    width: 0.75rem;
+    position: absolute;
+    height: 15px;
+    bottom: 15px;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.SelectBtn{
+    width: 0.75rem;
+    height: 0.75rem;
+    background-image: url("../assets/Layer 148@2x.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+.SelectBtn1 {
+    width: 0.75rem;
+    height: 0.75rem;
+    background-image: url("../assets/Layer 148@2x.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+}
+
+.main {
+    font-size: 0.875rem;
+    width: 667px;
+    height: 378px;
+    background-color: #DFDFDF;
+    margin: 0 342px 86px 30px;
+}
+
+.title-calc {
+    cursor: default;
+    display: inline-block;
+    color: #EB5017;
+    font-size: 1.875rem;
+    margin: 13.5px 337px 33px 96px;
+}
+
+#value, #value1 {
+    display: block;
+    text-align: center;
+    cursor: default;
+}
+
+#myRange, #myRange1 {
+    margin: 5px 0 0 0;
+    padding: 0 0 0 0;
+    width: 258px;
+    cursor: pointer;
+}
+
+.slider-border {
+    display: flex;
+    justify-content: space-between;
+}
+
+td, span {
+    cursor: default;
+}
+.label {
+    padding-right: 19px;
+}
+/*Footer ============
+/============ */
+.footer {
+    position:fixed;
+    bottom: 0;
+    width:1024px;
+    height:55px;
+}
+
+.footer-nav {
+    font-size: 0.75rem;
+    bottom: 0;
+    width: 1002px;
+    height: 55px;
+    background-color: #231F20;
+    margin: 0 auto;
+    cursor: default;
+}
+.footer-nav-item {
+    display: inline-block;
+    color: #FFFFFF;
+    margin: 11px 15px 0 15px;
+}
+.footer-nav a:first-child   {
+    margin-left: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+

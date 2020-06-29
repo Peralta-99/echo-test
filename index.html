@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src = "./datepicker-ru.js" >
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datepicker').datepicker($.extend({
+                    inline: true,
+                    changeYear: true,
+                    changeMonth: true,
+                },
+                $.datepicker.regional['ru']
+            ));
+        });
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Bank</title>
+</head>
+<body>
+    <div class="page">
+
+        <header>
+            <div class="header-logo">
+                <a href="#" class="logo"></a>
+            </div>
+            <nav>
+            <div class="navigation">
+                <a class="navigation-item" href="#">Кредитные карты</a>
+                <a class="navigation-item active" href="#">Вклады</a>
+                <a class="navigation-item" href="#">Дебетовая карта</a>
+                <a class="navigation-item" href="#">Страхование</a>
+                <a class="navigation-item" href="#">Друзья</a>
+                <a class="navigation-item" href="#">Интернет-банк</a>
+            </div>
+                <ul class="breadcrumbs">
+                    <li class="breadcrumbs-item"><a href="#"><u>Главная</u></a> - </li>
+                    <li class="breadcrumbs-item"><a href="#"><u>Вклады</u></a> - </li>
+                    <li class="breadcrumbs-item">Калькулятор</li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="main">
+                <span class="title-calc">Калькулятор</span>
+            <form id="deposit-calculator" name="deposit_calc" method="post" action="calc.php">
+                <table style="padding-left: 21px" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td style="padding-bottom: 25px" align="right">Дата оформления вклада</td>
+                        <td style="padding: 0 0 22px 22px">
+                            <input type=text required aria-disabled="true" name="deposit_start" autocomplete="off" style="width: 82px" id="datepicker"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 25px" align="right">Сумма вклада</td>
+                            <td style="padding: 0 0 22px 22px">
+                                <style>
+                                    input::-webkit-outer-spin-button,
+                                    input::-webkit-inner-spin-button {
+                                        -webkit-appearance: none;
+                                        margin: 0;
+                                    }
+                                    input[type="number"] {
+                                        -moz-appearance: textfield;
+                                    }
+                                </style>
+                                <input required name="deposit_amount" min="1000" max="3000000" id="deposit-value" type="number" placeholder="1000"/>
+                            </td>
+                        <td class="slider">
+
+                                <div style="position: relative">
+                                    <input class="range-slider" id='myRange' max="3000" type="range" value="0" step="1">
+                                    <div id="selector">
+                                        <div class="SelectBtn"></div>
+                                    </div>
+                                    <div id="progressBar"></div>
+                                </div>
+                                <span style="font-size: 12px" id="value"></span>
+                            <div class="slider-border">
+                                <span style="cursor: default; font-size: 10px; font-family: Verdana; font-style: italic">1 тыс. руб.</span>
+                                <span style="cursor: default; font-size: 10px; font-family: Verdana; font-style: italic">3 млн. руб.</span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 25px" align="right">Срок вклада</td>
+                        <td style="padding: 0 0 22px 22px">
+                            <select name="term-deposit" style="width: 82px">
+                                <option>1 год</option>
+                                <option>2 года</option>
+                                <option>3 года</option>
+                                <option>4 года</option>
+                                <option>5 лет</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 25px; margin-bottom: 20px" align="right"><span>Пополнение вклада</span></td>
+                        <td style="padding-bottom: 23px;">
+                            <label style="margin: 0 0 0 23px;" class="label"><input onclick="myFunction()" checked id="refill-off" name="refill-deposit" type="radio" class="checkbox">
+                                        Нет</label>
+                            <label class="label"><input onclick="myFunction()" id="refill-on" name="refill-deposit" type="radio" class="checkbox">
+                                        Да</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding-bottom: 25px" align="right"><span>Сумма пополнения вклада</span></td>
+                        <td style="padding: 0 0 22px 22px">
+                            <style>
+                                input::-webkit-outer-spin-button,
+                                input::-webkit-inner-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+                                input[type="number"] {
+                                    -moz-appearance: textfield;
+                                }
+                            </style>
+                            <input name="amount_refill" min="1000" max="3000000" id="deposit-value1" type="number" placeholder="1000"/>
+                        </td>
+                        <td class="slider">
+
+
+
+                            <div style="position: relative">
+                            <input class="range-slider" id='myRange1' max="3000" type="range" value="0" step="1">
+                            <div id="selector1">
+                                <div id="slide-select" class="SelectBtn1"></div>
+                            </div>
+                            <div id="progressBar1"></div>
+                            <span class="slide-span" style="font-size: 12px" id="value1"></span>
+                            </div>
+                            <div class="slider-border">
+                                <span style="cursor: default; font-size: 10px; font-family: Verdana; font-style: italic">1 тыс. руб.</span>
+                                <span style="cursor: default; font-size: 10px; font-family: Verdana; font-style: italic">3 млн. руб.</span>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">
+                            <input style="cursor: pointer; margin-top: 28px" type="button" id="btn" value="         Рассчитать         "/>
+                        </td>
+                        <td align="center">
+                            <span id="result_form" style="margin-top: 28px; display: block">Результат: <span></span></span>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+        <div class="footer">
+            <div class="footer-nav">
+                <a class="footer-nav-item" href="#">Кредитные карты</a>
+                <a class="footer-nav-item active" href="#">Вклады</a>
+                <a class="footer-nav-item" href="#">Дебетовая карта</a>
+                <a class="footer-nav-item" href="#">Страхование</a>
+                <a class="footer-nav-item" href="#">Друзья</a>
+                <a class="footer-nav-item" href="#">Интернет-банк</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
